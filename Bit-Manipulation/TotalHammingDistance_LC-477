@@ -1,0 +1,21 @@
+class Solution {
+    public int totalHammingDistance(int[] nums) {
+        
+       int total = 0, n = nums.length;
+        for (int j=0;j<32;j++) {
+            int bitCount = 0;
+            for (int i=0;i<n;i++) {
+                if(((nums[i] >> j) & 1) == 1) {
+                    bitCount++;
+                }
+            }
+            int offBit = (n - bitCount);
+            int diff = bitCount*offBit*2;
+            total += diff;
+            }
+            return total;
+        }
+        
+}
+
+//https://leetcode.com/problems/total-hamming-distance/
