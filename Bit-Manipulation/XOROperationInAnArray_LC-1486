@@ -1,0 +1,32 @@
+class Solution {
+    public int xorOperation(int n, int start) {
+        
+//         int arr[] = new int[n];
+//         for(int i = 0; i < n; i++) {
+//             arr[i] = start + 2*i;
+//         }
+        
+//         int res = 0;
+//         for(int i = 0; i < 32; i++) {
+//             int count = 0;
+//             for(int a : arr) {
+//                 if(((a >> i) & 1) == 1) {
+//                     count++;
+//                 }
+//             }
+//             if((count & 1) == 1) {
+//                 res += Math.pow(2,i);
+//             }
+//         }
+//         return res;
+        
+        int xor = 0;
+        for(int i = 0; i < n; i++) {
+            xor ^= start + 2 * i;
+        }
+        return xor;
+    }
+}
+
+
+//https://leetcode.com/problems/xor-operation-in-an-array/
