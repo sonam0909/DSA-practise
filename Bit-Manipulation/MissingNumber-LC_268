@@ -1,0 +1,17 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+        
+        int len = nums.length;
+        int xor = 0;
+        int i;
+        
+        for(i = 0; i < len; i++) {
+            xor ^= i ^ nums[i];
+        }
+        
+        return (xor ^ i);
+        
+    }
+}
+
+//https://leetcode.com/problems/missing-number/
