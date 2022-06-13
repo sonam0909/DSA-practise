@@ -1,0 +1,15 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+        
+        int len = nums.length;
+        int xor = nums[0];
+        
+        for(int i = 1; i < nums.length; i++) {
+             xor ^= i ^ nums[i];
+        }
+        return xor;
+    }
+}
+
+
+//https://leetcode.com/problems/find-the-duplicate-number/
