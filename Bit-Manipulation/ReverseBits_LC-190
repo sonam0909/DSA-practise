@@ -1,0 +1,29 @@
+public class Solution {
+    // you need treat n as an unsigned value
+    public int reverseBits(int n) {
+        
+//         int j = 31;
+//         int sum = 0;
+        
+//         for(int i = 0; i < 32; i++) {
+//             if(((n >> i) & 1) == 1) {
+//                 sum += Math.pow(2, j);
+//                 }
+//             j--;
+//         }
+//         return sum;
+        
+        int res = 0;
+        int i = 0;
+        
+        while(i < 32) {
+            res <<= 1;
+            if((n & 1) == 1)res++;
+            n >>= 1;
+            i++;
+        }
+        return res;
+    }
+}
+
+//https://leetcode.com/problems/reverse-bits/
