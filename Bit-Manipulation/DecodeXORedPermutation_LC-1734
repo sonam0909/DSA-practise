@@ -1,0 +1,33 @@
+class Solution {
+    public int[] decode(int[] encoded) {
+        
+        int len = encoded.length;
+        int xor = findXOR(len + 1);
+        int res[] = new int[len + 1];
+        
+        for(int i = 1; i < len; i+=2) {
+            xor ^= encoded[i];
+        }
+        
+       res[0] = xor;
+       
+        for(int i = 0; i < len; i++) {
+            xor ^= encoded[i];
+            res[i+1] = xor;
+        }
+        return res;
+    }
+    
+    public int findXOR(int n) {
+        if(n % 4 == 0)
+            return n;
+        if(n % 4 == 1)
+            return 1;
+        if(n % 4 == 2) 
+            return n+1;
+        return 0;
+    }
+}
+
+
+//https://leetcode.com/problems/decode-xored-permutation/
