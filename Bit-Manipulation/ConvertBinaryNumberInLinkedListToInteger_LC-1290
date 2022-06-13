@@ -1,0 +1,15 @@
+class Solution {
+    public int getDecimalValue(ListNode head) {
+        
+        int x = head.val;
+        int y = x << 1;
+        head = head.next;
+        while(head != null) {
+            x = head.val;
+            y = y + x;
+            head = head.next;
+            y <<= 1;
+        }
+        return (y>>1);
+    }
+}
